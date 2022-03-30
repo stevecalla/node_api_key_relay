@@ -17,7 +17,7 @@ app.use(express.json());
 // https://expressjs.com/en/guide/behind-proxies.html
 // app.set('trust proxy', 1);
 
-const whitelist = ["http://127.0.0.1", "http://127.0.0.1:5500", "https://stevecalla.github.io/not_wordle_v1/"];
+const whitelist = ["http://127.0.0.1", "http://127.0.0.1:5500", "https://stevecalla.github.io/not_wordle_v1/", "https://stevecalla.github.io"];
 const corsOptions = {
   origin: (origin, callback) => {
     if (!origin || whitelist.indexOf(origin) !== -1) {
