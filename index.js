@@ -7,6 +7,8 @@ const port = 3000;
 
 const weather = require("./weather");
 
+const definitionElementary = require("./definition-elementary");
+
 app.use(express.json());
 
 // Use if you're behind a reverse proxy
@@ -48,5 +50,9 @@ app.use(limiter);
 app.get("/", (req, res) => res.json({ success: "Hello World!" }));
 
 app.use("/weather", weather);
+
+app.use("/definition-elementary", definitionElementary);
+
+// app.use("/weather", weather);
 
 app.listen(port, () => console.log(`App listening on port ${port}`));
