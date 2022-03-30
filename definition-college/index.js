@@ -3,8 +3,8 @@ const router = express.Router();
 const fetch = require("node-fetch");
 
 const fetchDefinition = async (searchtext) => {
-  const url = `https://www.dictionaryapi.com/api/v3/references/sd2/json/${searchtext}?key=${process.env.ELEMENTARY_API_KEY}`;
-  // https://www.dictionaryapi.com/api/v3/references/sd2/json/${solution}?key=8a8c06ea-289c-450d-90f1-cf98924da140
+  const url = `https://www.dictionaryapi.com/api/v3/references/collegiate/json/${searchtext}?key=${process.env.ELEMENTARY_API_KEY}`;
+  // https://www.dictionaryapi.com/api/v3/references/collegiate/json/${solution}?key=d6ad76fd-5324-4925-834b-17a06efafce6
   try {
     const definitionStream = await fetch(url);
     const definitionJson = await definitionStream.json();
@@ -15,7 +15,7 @@ const fetchDefinition = async (searchtext) => {
 };
 
 router.get("/", (req, res) => {
-  res.json({ success: "Hello Definition Elementary!" });
+  res.json({ success: "Hello Definition College!" });
 });
 
 router.get("/:searchtext", async (req, res) => {

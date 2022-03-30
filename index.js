@@ -5,9 +5,11 @@ const cors = require("cors");
 const app = express();
 const port = 3000;
 
-const weather = require("./weather");
+// const weather = require("./weather");
 
 const definitionElementary = require("./definition-elementary");
+
+const definitionCollege = require("./definition-college");
 
 app.use(express.json());
 
@@ -15,7 +17,7 @@ app.use(express.json());
 // https://expressjs.com/en/guide/behind-proxies.html
 // app.set('trust proxy', 1);
 
-const whitelist = ["http://127.0.0.1", "http://127.0.0.1:5500"];
+const whitelist = ["http://127.0.0.1", "http://127.0.0.1:5500", "https://stevecalla.github.io/not_wordle_v1/"];
 const corsOptions = {
   origin: (origin, callback) => {
     if (!origin || whitelist.indexOf(origin) !== -1) {
@@ -49,9 +51,11 @@ app.use(limiter);
 //test route
 app.get("/", (req, res) => res.json({ success: "Hello World!" }));
 
-app.use("/weather", weather);
+// app.use("/weather", weather);
 
 app.use("/definition-elementary", definitionElementary);
+
+app.use("/definition-college", definitionCollege);
 
 // app.use("/weather", weather);
 
