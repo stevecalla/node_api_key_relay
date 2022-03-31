@@ -24,10 +24,10 @@ router.get("/:searchtext", async (req, res) => {
   res.json(data);
 });
 
-router.post("/", async (req, res) => {
-  const searchtext = req.body.searchtext;
-  const data = await fetchDefinition(searchtext);
-  res.json(data);
-});
+// router.post("/", async (req, res) => {
+//   const searchtext = req.body.searchtext;
+//   const data = await fetchDefinition(searchtext);
+//   res.json(data);
+// });
 
 module.exports = router;

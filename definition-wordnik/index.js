@@ -3,8 +3,9 @@ const router = express.Router();
 const fetch = require("node-fetch");
 
 const fetchDefinition = async (searchtext) => {
-  const url = `https://www.dictionaryapi.com/api/v3/references/sd2/json/${searchtext}?key=${process.env.ELEMENTARY_API_KEY}`;
-  // https://www.dictionaryapi.com/api/v3/references/sd2/json/${solution}?key=8a8c06ea-289c-450d-90f1-cf98924da140
+  const url = `https://api.wordnik.com/v4/word.json/${searchtext}/definitions?limit=200&includeRelated=false&useCanonical=false&includeTags=false&api_key=${process.env.WORDNIK_API_KEY}`;
+  // const url = `https://api.wordnik.com/v4/word.json/Word/definitions?limit=200&includeRelated=false&useCanonical=false&includeTags=false&api_key=yh6m0pne71140ovktya1nw7ufczqyp1q3lwtzp95yqh4j6fvd`;
+
   try {
     const definitionStream = await fetch(url);
     const definitionJson = await definitionStream.json();
@@ -15,7 +16,7 @@ const fetchDefinition = async (searchtext) => {
 };
 
 router.get("/", (req, res) => {
-  res.json({ success: "Hello Definition Elementary!" });
+  res.json({ success: "Hello Definition WORDNIK!" });
 });
 
 router.get("/:searchtext", async (req, res) => {

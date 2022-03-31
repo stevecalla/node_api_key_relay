@@ -11,6 +11,8 @@ const definitionElementary = require("./definition-elementary");
 
 const definitionCollege = require("./definition-college");
 
+const definitionWordnik = require("./definition-wordnik");
+
 app.use(express.json());
 
 // Use if you're behind a reverse proxy
@@ -56,6 +58,8 @@ app.get("/", (req, res) => res.json({ success: "Hello World!" }));
 app.use("/definition-elementary", definitionElementary);
 
 app.use("/definition-college", definitionCollege);
+
+app.use("/definition-wordnik", definitionWordnik);
 
 // app.use("/weather", weather);
 
