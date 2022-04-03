@@ -3,7 +3,8 @@ const router = express.Router();
 const fetch = require("node-fetch");
 
 const fetchDefinition = async (searchtext) => {
-  const url = `https://api.wordnik.com/v4/word.json/${searchtext}/definitions?limit=200&includeRelated=false&useCanonical=false&includeTags=false&api_key=${process.env.WORDNIK_API_KEY}`;
+  const url = `https://api.wordnik.com/v4/word.json/${searchtext}/audio?useCanonical=false&limit=50&api_key=yh6m0pne71140ovktya1nw7ufczqyp1q3lwtzp95yqh4j6fvd`;
+  // const url = `https://api.wordnik.com/v4/word.json/${searchtext}/definitions?limit=200&includeRelated=false&useCanonical=false&includeTags=false&api_key=${process.env.WORDNIK_API_KEY}`;
   // const url = `https://api.wordnik.com/v4/word.json/Word/definitions?limit=200&includeRelated=false&useCanonical=false&includeTags=false&api_key=yh6m0pne71140ovktya1nw7ufczqyp1q3lwtzp95yqh4j6fvd`;
 
   try {

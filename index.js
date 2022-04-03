@@ -11,7 +11,7 @@ const definitionElementary = require("./definition-elementary");
 
 const definitionCollege = require("./definition-college");
 
-const definitionWordnik = require("./definition-wordnik");
+const audioWordnik = require("./audio-wordnik");
 
 app.use(express.json());
 
@@ -59,7 +59,7 @@ app.use("/definition-elementary", definitionElementary);
 
 app.use("/definition-college", definitionCollege);
 
-app.use("/definition-wordnik", definitionWordnik);
+app.use("/audio-wordnik", audioWordnik);
 
 // app.use("/weather", weather);
 
